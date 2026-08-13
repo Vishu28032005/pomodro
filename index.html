@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>Pomodro</title>
+</head>
+<body>
+
+    <div class="nav">
+        <p class="logo">Pomodro</p>
+        <div class="nav-right">
+            <span class="sessions" id="session-count">0 sessions</span>
+            <button class="settings-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-icon lucide-settings"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+        </div>
+    </div>
+    
+    <main class="timer-card">
+
+        <div class="mode-switch">
+            <button class="mode-button-active" data-time="1500">Focus</button>
+            <button class="mode-button" data-time="300">Short Break</button>
+            <button class="mode-button" data-time="900">Long Break</button>
+        </div>
+
+        <div class="time-display">
+            <p id="timer" class="time">25:00</p>
+            <p id="mode-label">FOCUS</p>
+        </div>
+
+
+        <div class="control-btn">
+            <button id="reset-btn" class="icon_btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw-icon lucide-rotate-ccw"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            </button>
+            <button id="pause-btn" class="icon_btn_secondary" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play-icon lucide-play"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+            </button>
+            <button id="forward-btn" class="icon_btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-fast-forward-icon lucide-fast-forward"><path d="M12 6a2 2 0 0 1 3.414-1.414l6 6a2 2 0 0 1 0 2.828l-6 6A2 2 0 0 1 12 18z"/><path d="M2 6a2 2 0 0 1 3.414-1.414l6 6a2 2 0 0 1 0 2.828l-6 6A2 2 0 0 1 2 18z"/></svg>
+            </button>
+        </div>
+
+        <div class="ellipsis"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-icon lucide-ellipsis"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></div>
+
+        <div class="bg_sounds">
+            <span class="sound_header">AMBIENT SOUND</span>
+            <div class="sound_options">
+                <button class="sound-btn" data-sound="silence">Silence</button>
+                <button class="sound-btn" data-sound="rain">Rain</button>
+                <button class="sound-btn" data-sound="forest">Forest</button>  
+                <button class="sound-btn" data-sound="cafe">Cafe</button>
+                <button class="sound-btn" data-sound="ocean">Ocean</button>
+                <button class="sound-btn" data-sound="lofi">Lo-fi</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="settings-modal" class="modal-overlay">
+        <div class="settings-drawer">
+ 
+            <div class="settings-header">
+                <h2>Settings</h2>
+                <button id="close-modal-button" class="close-btn">&times;</button>
+            </div>
+
+            <div class="drawer-content">
+                <div class="setting-section">
+                    <span class="section-title">Theme</span>
+                    <div class="theme-grid">
+                        <button class="theme-card active" data-theme="lavendar">
+                            <span class="color-dot lavendar"></span>
+                            <span>LAVENDAR</span>
+                        </button>
+                        <button class="theme-card" data-theme="crimson">
+                            <span class="color-dot crimson"></span>
+                            <span>CRIMSON</span>
+                        </button>
+                        <button class="theme-card" data-theme="ocean">
+                            <span class="color-dot ocean"></span>
+                            <span>OCEAN</span>
+                        </button>
+                        <button class="theme-card" data-theme="forest">
+                            <span class="color-dot forest"></span>
+                            <span>FOREST</span>
+                        </button>
+                        <button class="theme-card" data-theme="sunset">
+                            <span class="color-dot sunset"></span>
+                            <span>SUNSET</span>
+                        </button>
+                        <button class="theme-card" data-theme="rose">
+                            <span class="color-dot rose"></span>
+                            <span>ROSE</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="setting-section">
+                    <span class="section-title">Timer Durations</span>
+                    <div class="stepper-row">
+                        <span>FOCUS</span>
+                        <div class="stepper">
+                            <button class="step-btn" id="focus-minus">&minus;</button>
+                            <span id="focus-val" class="step-val">25m</span>
+                            <button class="step-btn" id="focus-plus">&plus; </button>
+                        </div>
+                    </div>
+                    <div class="stepper-row">
+                        <span>SHORT BREAK</span>
+                        <div class="stepper">
+                            <button class="step-btn" id="short-break-minus">&minus;</button>
+                            <span id="short-break-val" class="step-val">5m</span>
+                            <button class="step-btn" id="short-break-plus">&plus; </button>
+                        </div>
+                    </div>
+                    <div class="stepper-row">
+                        <span>LONG BREAK</span>
+                        <div class="stepper">
+                            <button class="step-btn" id="long-break-minus">&minus;</button>
+                            <span id="long-break-val" class="step-val">15m</span>
+                            <button class="step-btn" id="long-break-plus">&plus; </button>
+                        </div>  
+                    </div>
+                </div>
+
+                <div class="setting-section">
+                    <span class="section-title">Sessions</span>
+                    <div class="session-info-row">
+                        <span>COMPLETED TODAY</span>
+                        <span id="completed-count" class="session-count">0</span>
+                    </div>
+                    <button id="reset-sessions-btn" class="reset-btn">Reset Sessions</button>
+
+                </div>
+            </div>
+        </div>        
+    </div>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
