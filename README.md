@@ -16,3 +16,5 @@ A sleek, customizable Pomodoro timer built with HTML, CSS, and Vanilla JavaScrip
 - CSS3 (Custom CSS variables & backdrop filters)
 - Vanilla JavaScript (DOM manipulation & Web Audio API)
 - Lucide Icons
+
+https://roadmap.sh/projects/pomodoro-timer
