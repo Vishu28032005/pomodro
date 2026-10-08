@@ -1,5 +1,7 @@
 # 🍅 Pomodro - Vanilla JavaScript Pomodoro Timer
 
+Project URL : https://pomodoro-timer-xi-sable.vercel.app/
+
 A sleek, customizable Pomodoro timer built with HTML, CSS, and Vanilla JavaScript. Features custom focus and break durations, theme switching, session tracking, and ambient background sounds.
 
 ## ✨ Features
